@@ -1,4 +1,4 @@
-module github.com/AvdzhiV/cwGame
+module cwGame
 
 go 1.22.5
 
