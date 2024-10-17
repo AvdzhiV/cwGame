@@ -11,9 +11,11 @@ type RemoteLayout struct {
 	left, right fyne.CanvasObject
 }
 
+/*
 type FormContent struct {
 	left, right fyne.CanvasObject
 }
+*/
 
 func NewRemoteLayout(left, right fyne.CanvasObject) fyne.Layout {
 	return &RemoteLayout{left: left, right: right}

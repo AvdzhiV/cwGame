@@ -15,11 +15,11 @@ func MainMenu(app fyne.App) fyne.CanvasObject {
 	Logo := CreateImage(resources.MainLogo, 150, 150, canvas.ImageFillContain)
 
 	ListPlayers := widget.NewButton("Player list", func() {
-		winListPlayer := app.NewWindow("Player list")
-		winListPlayer.SetFixedSize(true)
-		winListPlayer.Resize(fyne.NewSize(400, 300))
-		winListPlayer.SetContent(ShowListPlayers(app))
-		winListPlayer.Show()
+		WinListPlayer := app.NewWindow("Player list")
+		WinListPlayer.SetFixedSize(true)
+		WinListPlayer.Resize(fyne.NewSize(400, 300))
+		WinListPlayer.SetContent(ShowListPlayers(app, WinListPlayer))
+		WinListPlayer.Show()
 	})
 
 	NewGame := widget.NewButton("New game", func() {

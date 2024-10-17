@@ -46,3 +46,20 @@ func GetPlayersFromServer() []Players {
 
 	return players
 }
+
+func DeletePlayerOnServer(nickname string) {
+	req, err := http.NewRequest("DELETE", "http://94.142.137.149:8080/player/"+nickname, nil)
+	if err != nil {
+		fmt.Println("Error deleting player on server:", err)
+		return
+	}
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println("Error deleting player on server:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	fmt.Println("Player deleted on server:", nickname)
+}

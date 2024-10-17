@@ -10,7 +10,7 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-func AddNewPlayer(PlayerList *widget.List) fyne.CanvasObject {
+func AddNewPlayer(PlayerList *widget.List, players *[]handlers.Players) fyne.CanvasObject {
 	nicknameEntry := widget.NewEntry()
 	nicknameEntry.SetPlaceHolder("Player nickname")
 
@@ -36,6 +36,7 @@ func AddNewPlayer(PlayerList *widget.List) fyne.CanvasObject {
 		}
 
 		handlers.SendPlayerToServer(newPlayer)
+		*players = handlers.GetPlayersFromServer()
 		PlayerList.Refresh()
 	})
 
